@@ -1,0 +1,22 @@
+{
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "algorithms exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndriyMartynyshyn/algo.git"
+  },
+  "author": "Andrew Martynyshyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndriyMartynyshyn/algo/issues"
+  },
+  "homepage": "https://github.com/AndriyMartynyshyn/algo#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
