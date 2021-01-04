@@ -8,6 +8,22 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
+  const resWords = [];
+
+  for (let word of str.split(" ")) {
+    resWords.push(word[0].toUpperCase() + word.slice(1));
+  }
+
+  return resWords.join(" ");
+}
+
+module.exports = capitalize;
+
+/** bad solution */
+
+/*
+
+function capitalize(str) {
   let needToCapitalize = true;
   const resultArr = [];
 
@@ -27,4 +43,4 @@ function capitalize(str) {
   return resultArr.join("");
 }
 
-module.exports = capitalize;
+*/
