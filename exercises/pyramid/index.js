@@ -19,20 +19,35 @@
 //       ' ##### '
 //       '#######'
 
-function pyramid(n) {
-  debugger;
-  for (let row = 0; row < n; row++) {
-    let pyramid = "";
-    for (let col = 0; col < 2 * n - 1; col++) {
-      if (col >= n - 1 - row && col <= n - 1 + row) {
-        pyramid += "#";
-      } else {
-        pyramid += " ";
-      }
-    }
+function pyramid(n, row = 0, level = "") {
+  if (n === row) return;
 
-    console.log(pyramid);
+  if (2 * n - 1 === level.length) {
+    console.log(level);
+    return pyramid(n, row + 1);
   }
+
+  const midpoint = Math.floor((2 * n - 1) / 2);
+  const add =
+    midpoint - row <= level.length && midpoint + row >= level.length
+      ? "#"
+      : " ";
+
+  pyramid(n, row, level + add);
 }
 
 module.exports = pyramid;
+
+//   loop solution
+//   for (let row = 0; row < n; row++) {
+//     let pyramid = "";
+//     for (let col = 0; col < 2 * n - 1; col++) {
+//       if (col >= n - 1 - row && col <= n - 1 + row) {
+//         pyramid += "#";
+//       } else {
+//         pyramid += " ";
+//       }
+//     }
+
+//     console.log(pyramid);
+//   }
