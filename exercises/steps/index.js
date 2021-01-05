@@ -17,17 +17,51 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-  const arr = [];
+function steps(n, row = 0, stair = "") {
+  if (n === row) return;
 
-  for (let index = 0; index < n; index++) {
-    arr.push(" ");
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
   }
 
-  for (let index = 0; index < n; index++) {
-    arr[index] = "#";
-    console.log(arr.join(""));
+  if (stair.length <= row) {
+    stair += "#";
+  } else {
+    stair += " ";
   }
+
+  steps(n, row, stair);
 }
 
 module.exports = steps;
+
+// first solution
+// function steps(n) {
+//     const arr = [];
+
+//     for (let index = 0; index < n; index++) {
+//       arr.push(" ");
+//     }
+
+//     for (let index = 0; index < n; index++) {
+//       arr[index] = "#";
+//       console.log(arr.join(""));
+//     }
+//   }
+
+// second solution
+// function steps(n) {
+//     for (let row = 0; row < n; row++) {
+//       let stair = "";
+//       for (let col = 0; col < n; col++) {
+//         if (col <= row) {
+//           stair += "#";
+//         } else {
+//           stair += " ";
+//         }
+//       }
+
+//       console.log(stair);
+//     }
+//   }
