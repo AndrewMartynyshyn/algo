@@ -8,6 +8,10 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+  add(n) {}
+
+  remove() {}
+}
 
 module.exports = Queue;
